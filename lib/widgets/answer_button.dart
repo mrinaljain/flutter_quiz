@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-class Answer extends StatelessWidget {
-  const Answer({super.key, required this.answerText, required this.onTap});
+class AnswerButton extends StatelessWidget {
+  const AnswerButton(
+      {super.key, required this.answerText, required this.onTap});
 
   final String answerText;
   final void Function() onTap;
@@ -13,13 +14,17 @@ class Answer extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         backgroundColor: const Color.fromARGB(255, 40, 18, 79),
         foregroundColor: Colors.white,
+        elevation: 5,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
         padding: const EdgeInsets.symmetric(
           horizontal: 40,
           vertical: 10,
         ),
       ),
-      child:  Text(answerText),
+      child: Text(
+        answerText,
+        textAlign: TextAlign.center,
+      ),
     );
   }
 }
